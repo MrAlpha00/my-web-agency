@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import CalendlyPopupButton from '@/components/CalendlyPopupButton';
+import TrackPageView from '@/components/TrackPageView';
 
 export async function generateStaticParams() {
     const posts = await getAllPosts('case-studies');
@@ -81,6 +82,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <TrackPageView eventName="case_study_view" title={title} />
             <article className="bg-[#0A0A0A] min-h-screen pt-24 pb-16 text-white selection:bg-indigo-500/30">
                 {/* Hero Header */}
                 <div className="relative border-b border-white/10 pb-16 overflow-hidden">

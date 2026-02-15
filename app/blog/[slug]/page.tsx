@@ -49,6 +49,8 @@ const components = {
     a: (props: any) => <Link href={props.href || '#'} {...props} className="text-indigo-600 hover:text-indigo-500 no-underline hover:underline" />,
 };
 
+import TrackPageView from '@/components/TrackPageView';
+
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const { meta, content } = await getPostBySlug('blog', slug);
@@ -74,6 +76,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
     return (
         <>
+            <TrackPageView eventName="blog_read" title={title} />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

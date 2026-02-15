@@ -20,6 +20,15 @@ export default function CalendlyPopupButton({ url, className, children }: Calend
 
     const handleClick = (e: React.MouseEvent) => {
         e.preventDefault();
+
+        // Track event
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+            (window as any).gtag('event', 'strategy_call_click', {
+                event_category: 'engagement',
+                event_label: 'calendly_popup',
+            });
+        }
+
         if (isScriptLoaded && window.Calendly) {
             window.Calendly.initPopupWidget({ url });
         } else {

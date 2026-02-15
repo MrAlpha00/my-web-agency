@@ -34,7 +34,7 @@ export default function FinalCTA() {
                             url="https://calendly.com/sm4686771/automation-systems-audit"
                             className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white transition-all duration-200 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full hover:scale-105 hover:shadow-[0_0_20px_rgba(79,70,229,0.5)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 focus:ring-offset-black"
                         >
-                            <span>Book Free Strategy Call</span>
+                            <span>Get Your Growth Architecture Review</span>
                             <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </CalendlyPopupButton>
 

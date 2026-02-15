@@ -8,6 +8,10 @@ import EngineeredResults from '@/components/EngineeredResults';
 import FinalCTA from '@/components/FinalCTA';
 import LeadMagnet from '@/components/LeadMagnet';
 import CalendlyPopupButton from '@/components/CalendlyPopupButton';
+import Testimonials from '@/components/Testimonials';
+import TrustBadges from '@/components/TrustBadges';
+import CaseStudyPreview from '@/components/CaseStudyPreview';
+import WhoWeServe from '@/components/WhoWeServe';
 
 export default function Home() {
   return (
@@ -48,7 +52,7 @@ export default function Home() {
                 url="https://calendly.com/sm4686771/automation-systems-audit"
                 className="group relative inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-semibold text-black transition-all hover:scale-105 hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                <span className="relative z-10">Get Free Automation Audit</span>
+                <span className="relative z-10">Get Your Growth Architecture Review</span>
                 <div className="absolute inset-0 -z-10 rounded-full bg-white blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
               </CalendlyPopupButton>
               <Link
@@ -66,9 +70,13 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20 pointer-events-none" />
       </section>
 
+      <TrustBadges />
+      <Testimonials />
       <CoreSolutions />
+      <WhoWeServe />
       <LeadMagnet />
       <RevenueProcess />
+      <CaseStudyPreview />
       <EngineeredResults />
       <FinalCTA />
     </main>

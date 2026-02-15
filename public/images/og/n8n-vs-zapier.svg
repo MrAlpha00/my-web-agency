@@ -1,0 +1,37 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e1b4b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="n8n-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6d5a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="zapier-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff9f43;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffb142;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg-grad)" />
+  
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <text x="60" y="80" font-family="Arial, sans-serif" font-weight="bold" font-size="32" fill="white" letter-spacing="2">PUREONS</text>
+
+  <text x="60" y="300" font-family="Arial, sans-serif" font-weight="bold" font-size="80" fill="white">
+    <tspan x="60" dy="0" fill="url(#n8n-grad)">n8n</tspan>
+    <tspan dx="20" fill="white">vs</tspan>
+    <tspan dx="20" fill="url(#zapier-grad)">Zapier</tspan>
+  </text>
+  <text x="60" y="420" font-family="Arial, sans-serif" font-weight="bold" font-size="60" fill="white">
+    For Scaling Lead Flows
+  </text>
+
+  <!-- Visual: Gears/Nodes -->
+  <circle cx="1000" cy="315" r="120" fill="none" stroke="white" stroke-width="2" opacity="0.1" />
+  <path d="M 940 315 L 1060 315 M 1000 255 L 1000 375" stroke="white" stroke-width="2" opacity="0.1" />
+</svg>

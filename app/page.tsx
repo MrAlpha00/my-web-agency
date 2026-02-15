@@ -6,6 +6,7 @@ import CoreSolutions from '@/components/CoreSolutions';
 import RevenueProcess from '@/components/RevenueProcess';
 import EngineeredResults from '@/components/EngineeredResults';
 import FinalCTA from '@/components/FinalCTA';
+import LeadMagnet from '@/components/LeadMagnet';
 import CalendlyPopupButton from '@/components/CalendlyPopupButton';
 
 export default function Home() {
@@ -66,6 +67,7 @@ export default function Home() {
       </section>
 
       <CoreSolutions />
+      <LeadMagnet />
       <RevenueProcess />
       <EngineeredResults />
       <FinalCTA />

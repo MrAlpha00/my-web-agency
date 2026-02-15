@@ -3,6 +3,8 @@ title: "Scaling a High-Ticket Coach to $50k/mo with Automation"
 slug: "coach-automation"
 date: "2026-02-15"
 description: "How we automated lead qualification and booking for a business coach, saving 20+ hours per week."
+stat: "+300% Conversion"
+techStack: ["Webflow", "n8n", "OpenAI", "Calendly"]
 image: "/images/og/case-coach-automation.svg"
 ---
 

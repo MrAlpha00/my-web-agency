@@ -3,6 +3,8 @@ title: "Recovering $120k/yr in Lost Carts for a Shopify Brand"
 slug: "ecomm-automation"
 date: "2026-02-15"
 description: "How we used advanced Klaviyo flows and SMS automation to increase customer LTV."
+stat: "$120k/yr Recovered"
+techStack: ["Shopify", "Klaviyo", "Postscript", "Rebuy"]
 image: "/images/og/case-ecomm-automation.svg"
 ---
 

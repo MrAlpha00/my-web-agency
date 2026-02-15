@@ -3,6 +3,8 @@ title: "Full-Stack SaaS Platform Build"
 slug: "full-stack-saas-platform"
 date: "2026-02-15"
 description: "How we architected a high-scale SaaS platform using Next.js, Node.js, and Neon to handle 50k+ active users with 99.99% uptime."
+stat: "+210% Conversion"
+techStack: ["Next.js", "Neon", "Node.js", "Vercel"]
 tags: ["SaaS", "Full Stack", "Next.js", "Neon"]
 image: "/images/og/case-saas-platform.svg"
 client: "HealthFlow"

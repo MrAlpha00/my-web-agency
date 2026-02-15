@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
+import Image from 'next/image';
 import CalendlyPopupButton from '@/components/CalendlyPopupButton';
 
 export async function generateStaticParams() {
@@ -56,7 +57,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         notFound();
     }
 
-    const { title, date, tags, description } = meta;
+    const { title, date, tags, description, image } = meta;
 
     const jsonLd = {
         '@context': 'https://schema.org',
@@ -68,7 +69,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             '@type': 'Organization',
             name: 'Pureons',
         },
-        image: meta.image ? `https://pureons.com${meta.image}` : `https://pureons.com/images/og/default.png`,
+        image: image ? `https://pureons.com${image}` : `https://pureons.com/images/og/default.png`,
     };
 
     return (
@@ -79,7 +80,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             />
             <article className="bg-white min-h-screen pt-24 pb-16">
                 <div className="mx-auto max-w-3xl px-6 lg:px-8">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-10">
                         <div className="flex items-center justify-center gap-x-4 text-xs mb-6">
                             <time dateTime={date} className="text-gray-500">
                                 {date}
@@ -90,13 +91,25 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                                 </span>
                             ))}
                         </div>
-                        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
+                        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6 leading-tight">
                             {title}
                         </h1>
                         <p className="text-xl text-gray-500 leading-8">
                             {description}
                         </p>
                     </div>
+
+                    {image && (
+                        <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden mb-12 shadow-xl ring-1 ring-gray-900/10">
+                            <Image
+                                src={image}
+                                alt={title}
+                                fill
+                                priority
+                                className="object-cover"
+                            />
+                        </div>
+                    )}
 
                     <div className="prose prose-lg prose-indigo mx-auto text-gray-700">
                         <MDXRemote source={content} components={components} />

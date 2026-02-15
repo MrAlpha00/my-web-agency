@@ -3,6 +3,8 @@ title: "ExamGuardPro: Migrating to Production-Grade Web Infrastructure"
 slug: "examguardpro"
 date: "2026-02-15"
 description: "Migration from Replit to Render, Neon integration, Vite build fix and production CI pipeline."
+stat: "100% Uptime"
+techStack: ["React", "Neon", "Render", "Vite"]
 image: "/images/og/case-examguardpro.svg"
 ---
 

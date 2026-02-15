@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -39,10 +40,13 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
-            <div className="h-8 w-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">P</span>
-            </div>
-            <span className="text-xl font-semibold tracking-tight text-white">Pureons</span>
+            <Image
+              src="/images/logo.jpg"
+              alt="Pureons Logo"
+              width={300} // Doubled for higher resolution
+              height={80} // Doubled
+              className="h-20 w-auto" // Doubled from h-10 to h-20
+            />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -88,10 +92,13 @@ export default function Header() {
           >
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                <div className="h-8 w-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">P</span>
-                </div>
-                <span className="text-xl font-semibold tracking-tight text-white">Pureons</span>
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Pureons Logo"
+                  width={300}
+                  height={80}
+                  className="h-20 w-auto"
+                />
               </Link>
               <button
                 type="button"

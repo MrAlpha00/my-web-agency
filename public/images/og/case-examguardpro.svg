@@ -1,0 +1,37 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e1b4b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg-grad)" />
+  
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <text x="60" y="80" font-family="Arial, sans-serif" font-weight="bold" font-size="32" fill="white" letter-spacing="2">PUREONS</text>
+
+  <text x="60" y="280" font-family="Arial, sans-serif" font-weight="bold" font-size="40" fill="url(#text-grad)" letter-spacing="2">CASE STUDY</text>
+  
+  <text x="60" y="380" font-family="Arial, sans-serif" font-weight="bold" font-size="80" fill="white">
+    ExamGuardPro
+  </text>
+  
+  <text x="60" y="480" font-family="Arial, sans-serif" font-weight="normal" font-size="48" fill="white" opacity="0.8">
+    Migrating to Production-Grade
+    <tspan x="60" dy="60">Web Infrastructure</tspan>
+  </text>
+
+  <!-- Visual: Server Rack Abstract -->
+  <rect x="900" y="150" width="200" height="330" rx="10" fill="none" stroke="white" stroke-width="2" opacity="0.2" />
+  <line x1="920" y1="200" x2="1080" y2="200" stroke="url(#text-grad)" stroke-width="2" opacity="0.6" />
+  <line x1="920" y1="250" x2="1080" y2="250" stroke="white" stroke-width="2" opacity="0.2" />
+  <line x1="920" y1="300" x2="1080" y2="300" stroke="white" stroke-width="2" opacity="0.2" />
+</svg>

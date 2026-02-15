@@ -1,0 +1,36 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e1b4b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fb923c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg-grad)" />
+  
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <text x="60" y="80" font-family="Arial, sans-serif" font-weight="bold" font-size="32" fill="white" letter-spacing="2">PUREONS</text>
+
+  <text x="60" y="300" font-family="Arial, sans-serif" font-weight="bold" font-size="72" fill="white">
+    <tspan x="60" dy="0" fill="url(#text-grad)">Programmatic SEO</tspan>
+    <tspan x="60" dy="80" fill="white">with Next.js</tspan>
+  </text>
+  
+  <text x="60" y="450" font-family="Arial, sans-serif" font-weight="normal" font-size="48" fill="white" opacity="0.8">
+    <tspan x="60" dy="0">Scaling from 10 to</tspan>
+    <tspan x="60" dy="60">10,000 Pages</tspan>
+  </text>
+
+  <!-- Visual: Bar Chart -->
+  <rect x="950" y="350" width="30" height="50" fill="white" opacity="0.1" />
+  <rect x="1000" y="300" width="30" height="100" fill="white" opacity="0.2" />
+  <rect x="1050" y="250" width="30" height="150" fill="white" opacity="0.3" />
+  <rect x="1100" y="150" width="30" height="250" fill="url(#text-grad)" opacity="0.8" />
+</svg>

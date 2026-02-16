@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import InteractiveGlowSection from './InteractiveGlowSection';
 
 const badges = [
     "Next.js",
@@ -15,7 +16,7 @@ const badges = [
 
 export default function TrustBadges() {
     return (
-        <section className="bg-zinc-950 py-10 border-b border-white/5">
+        <InteractiveGlowSection className="bg-zinc-950 py-10 border-b border-white/5">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <p className="text-center text-sm font-semibold leading-8 text-zinc-500 mb-8">
                     TRUSTED TECH STACK & INTEGRATIONS
@@ -29,6 +30,6 @@ export default function TrustBadges() {
                     ))}
                 </div>
             </div>
-        </section>
+        </InteractiveGlowSection>
     );
 }

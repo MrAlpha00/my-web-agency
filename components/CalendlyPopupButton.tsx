@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Script from 'next/script';
 
 interface CalendlyPopupButtonProps {
@@ -17,6 +17,12 @@ declare global {
 
 export default function CalendlyPopupButton({ url, className, children }: CalendlyPopupButtonProps) {
     const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.Calendly) {
+            setIsScriptLoaded(true);
+        }
+    }, []);
 
     const handleClick = (e: React.MouseEvent) => {
         e.preventDefault();

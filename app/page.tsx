@@ -12,12 +12,14 @@ import Testimonials from '@/components/Testimonials';
 import TrustBadges from '@/components/TrustBadges';
 import CaseStudyPreview from '@/components/CaseStudyPreview';
 import WhoWeServe from '@/components/WhoWeServe';
+import InteractiveGlowSection from '@/components/InteractiveGlowSection';
 
 export default function Home() {
   return (
     <main className="bg-black selection:bg-indigo-500/30">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section */}
+      <InteractiveGlowSection className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/20 rounded-full blur-[120px] animate-pulse" />
@@ -68,7 +70,7 @@ export default function Home() {
 
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20 pointer-events-none" />
-      </section>
+      </InteractiveGlowSection>
 
       <CoreSolutions />
       <WhoWeServe />

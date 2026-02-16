@@ -76,7 +76,7 @@ export default function Header() {
             url="https://calendly.com/sm4686771/automation-systems-audit"
             className="rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all hover:scale-105 active:scale-95"
           >
-            Get Your Growth Architecture Review
+            Book Strategy Call
           </CalendlyPopupButton>
         </div>
       </nav>
@@ -128,7 +128,7 @@ export default function Header() {
                     url="https://calendly.com/sm4686771/automation-systems-audit"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-zinc-800 transition-colors w-full text-left"
                   >
-                    Get Your Growth Architecture Review
+                    Book Strategy Call
                   </CalendlyPopupButton>
                 </div>
               </div>

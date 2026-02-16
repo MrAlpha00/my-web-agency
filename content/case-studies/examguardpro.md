@@ -8,28 +8,7 @@ techStack: ["React", "Neon", "Render", "Vite"]
 image: "/images/og/case-examguardpro.svg"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "ExamGuardPro: Migrating to Production-Grade Web Infrastructure",
-  "description": "Migration from Replit to Render, Neon integration, Vite build fix and production CI pipeline.",
-  "image": "https://pureons.com/images/og/case-examguardpro.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "Pureons"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Pureons",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://pureons.com/images/logo.jpg"
-    }
-  },
-  "datePublished": "2026-02-15"
-}
-</script>
+
 
 ## Snapshot
 

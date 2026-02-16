@@ -7,28 +7,7 @@ tags: ["ai agents","automation","customer support","cx"]
 image: "/images/og/ai-customer-support-agents.svg"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "AI Customer Support Agents: The End of \"Please Hold\"",
-  "description": "How to deploy autonomous AI agents that handle 80% of your support tickets instantly, 24/7.",
-  "image": "https://pureons.com/images/og/ai-customer-support-agents.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "Pureons"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Pureons",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://pureons.com/images/logo.jpg"
-    }
-  },
-  "datePublished": "2026-02-15"
-}
-</script>
+
 
 Customer support is broken.
 Customers hate waiting. Agents hate repetitive questions. Businesses hate the cost of scaling support teams.

@@ -8,28 +8,7 @@ techStack: ["Webflow", "n8n", "OpenAI", "Calendly"]
 image: "/images/og/case-coach-automation.svg"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Scaling a High-Ticket Coach to $50k/mo with Automation",
-  "description": "How we automated lead qualification and booking for a business coach, saving 20+ hours per week.",
-  "image": "https://pureons.com/images/og/case-coach-automation.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "Pureons"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Pureons",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://pureons.com/images/logo.jpg"
-    }
-  },
-  "datePublished": "2026-02-15"
-}
-</script>
+
 
 ## Snapshot
 

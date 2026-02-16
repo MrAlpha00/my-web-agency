@@ -7,28 +7,7 @@ tags: ["Web Infrastructure", "Scalability", "Next.js", "Startup Growth"]
 image: "/images/og/modern-web-infrastructure.svg"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Why Modern Web Infrastructure Is Critical for Scaling Startups in 2026",
-  "description": "In 2026, speed is survival. Discover why modern web infrastructure using Next.js, Edge Computing, and Serverless databases is the non-negotiable foundation for high-growth startups.",
-  "image": "https://pureons.com/images/og/modern-web-infrastructure.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "Pureons"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Pureons",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://pureons.com/images/logo.jpg"
-    }
-  },
-  "datePublished": "2026-02-15"
-}
-</script>
+
 
 The digital landscape of 2026 is unforgiving. Users demand instant loads, search engines penalize anything less than core vitals perfection, and security threats are more sophisticated than ever. For a startup, your web infrastructure isn't just "IT plumbing"—it is the engine of your growth.
 

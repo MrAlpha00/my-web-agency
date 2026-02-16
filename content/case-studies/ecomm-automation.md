@@ -8,28 +8,7 @@ techStack: ["Shopify", "Klaviyo", "Postscript", "Rebuy"]
 image: "/images/og/case-ecomm-automation.svg"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Recovering $120k/yr in Lost Carts for a Shopify Brand",
-  "description": "How we used advanced Klaviyo flows and SMS automation to increase customer LTV.",
-  "image": "https://pureons.com/images/og/case-ecomm-automation.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "Pureons"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Pureons",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://pureons.com/images/logo.jpg"
-    }
-  },
-  "datePublished": "2026-02-15"
-}
-</script>
+
 
 ## Snapshot
 

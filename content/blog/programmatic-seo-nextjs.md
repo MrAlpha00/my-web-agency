@@ -7,28 +7,6 @@ tags: ["seo","next.js","automation","growth hacking"]
 image: "/images/og/programmatic-seo-nextjs.svg"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Programmatic SEO with Next.js: Scaling from 10 to 10,000 Pages",
-  "description": "A technical guide to capturing long-tail search traffic by generating thousands of high-value landing pages dynamically.",
-  "image": "https://pureons.com/images/og/programmatic-seo-nextjs.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "Pureons"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Pureons",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://pureons.com/images/logo.jpg"
-    }
-  },
-  "datePublished": "2026-02-15"
-}
-</script>
 
 Traditional SEO is linear: Write one article, target one keyword.
 **Programmatic SEO (pSEO)** is exponential: Write one template, target 10,000 keywords.
@@ -55,9 +33,9 @@ In the WordPress days, creating 10,000 pages meant a bloated database and a slow
 
 ### Step 1: Identify the Pattern
 Find a keyword modifier that your audience searches for.
-*   *Competitor*: "Zapier vs {Competitor}"
-*   *Location*: "SEO Agency in {City}"
-*   *Integration*: "Connect {App A} to {App B}"
+*   *Competitor*: "Zapier vs \{Competitor\}"
+*   *Location*: "SEO Agency in \{City\}"
+*   *Integration*: "Connect \{App A\} to \{App B\}"
 
 ### Step 2: The Dataset
 Create a dataset (e.g., in AirTable) where each row represents a page.

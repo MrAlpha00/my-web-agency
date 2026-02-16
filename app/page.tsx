@@ -71,13 +71,13 @@ export default function Home() {
       </section>
 
       <TrustBadges />
-      <Testimonials />
       <CoreSolutions />
       <WhoWeServe />
-      <LeadMagnet />
       <RevenueProcess />
       <CaseStudyPreview />
       <EngineeredResults />
+      <Testimonials />
+      <LeadMagnet />
       <FinalCTA />
     </main>
   );

@@ -1,24 +1,124 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChatBubbleOvalLeftEllipsisIcon, XMarkIcon, CalendarDaysIcon } from '@heroicons/react/24/solid';
 import CalendlyPopupButton from './CalendlyPopupButton';
-import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/solid'; // Assuming heroicons is installed
+
+// WhatsApp Icon Component (Simple SVG to avoid extra dependencies)
+const WhatsAppIcon = ({ className }: { className?: string }) => (
+    <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className={className}
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+);
 
 export default function FloatingCTA() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleOpen = () => setIsOpen(!isOpen);
+
+    const menuVariants = {
+        closed: { opacity: 0, scale: 0.8, y: 20, pointerEvents: "none" as const },
+        open: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            pointerEvents: "auto" as const,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        closed: { opacity: 0, x: 20 },
+        open: { opacity: 1, x: 0 }
+    };
+
     return (
-        <div className="fixed bottom-8 right-8 z-50 hidden md:block">
-            <CalendlyPopupButton
-                url="https://calendly.com/sm4686771/automation-systems-audit"
-                className="group relative flex items-center gap-3 bg-indigo-600 text-white px-6 py-4 rounded-full font-bold shadow-2xl hover:bg-indigo-500 transition-all hover:-translate-y-1 hover:shadow-indigo-500/30"
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial="closed"
+                        animate="open"
+                        exit="closed"
+                        variants={menuVariants}
+                        className="flex flex-col items-end gap-3 mb-2"
+                    >
+                        {/* WhatsApp Button */}
+                        <motion.a
+                            variants={itemVariants}
+                            href="https://wa.me/9663866778?text=Hi%20I%20want%20to%20discuss%20a%20web%20infrastructure%20or%20automation%20project"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/10 text-white px-5 py-3 rounded-full shadow-lg hover:bg-white/20 transition-all hover:scale-105 group"
+                        >
+                            <span className="font-medium text-sm">Chat on WhatsApp</span>
+                            <div className="bg-[#25D366] p-1.5 rounded-full text-white">
+                                <WhatsAppIcon className="w-5 h-5" />
+                            </div>
+                        </motion.a>
+
+                        {/* Book Meeting Button */}
+                        <motion.div variants={itemVariants}>
+                            <CalendlyPopupButton
+                                url="https://calendly.com/sm4686771/automation-systems-audit"
+                                className="flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/10 text-white px-5 py-3 rounded-full shadow-lg hover:bg-white/20 transition-all hover:scale-105 group"
+                            >
+                                <span className="font-medium text-sm">Book Strategy Call</span>
+                                <div className="bg-indigo-600 p-1.5 rounded-full text-white group-hover:bg-indigo-500 transition-colors">
+                                    <CalendarDaysIcon className="w-5 h-5" />
+                                </div>
+                            </CalendlyPopupButton>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Main Toggle Button */}
+            <motion.button
+                onClick={toggleOpen}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`relative flex items-center justify-center w-16 h-16 rounded-full shadow-2xl transition-all duration-300 ${isOpen
+                        ? 'bg-zinc-800 text-zinc-400 rotate-90'
+                        : 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
+                    }`}
             >
-                <span className="absolute inset-0 rounded-full border border-white/20" />
+                {/* Pulse Effect (only when closed) */}
+                {!isOpen && (
+                    <span className="absolute -inset-1 rounded-full bg-indigo-500 opacity-30 animate-ping pointer-events-none" />
+                )}
 
-                {/* Pulse Effect */}
-                <span className="absolute -inset-1 rounded-full bg-indigo-500 opacity-30 animate-ping" />
-
-                <ChatBubbleLeftRightIcon className="w-6 h-6" />
-                <span>Get Your Growth Architecture Review</span>
-            </CalendlyPopupButton>
+                <AnimatePresence mode="wait">
+                    {isOpen ? (
+                        <motion.div
+                            key="close"
+                            initial={{ opacity: 0, rotate: -90 }}
+                            animate={{ opacity: 1, rotate: 0 }}
+                            exit={{ opacity: 0, rotate: 90 }}
+                        >
+                            <XMarkIcon className="w-8 h-8" />
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="chat"
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.5 }}
+                        >
+                            <ChatBubbleOvalLeftEllipsisIcon className="w-8 h-8" />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </motion.button>
         </div>
     );
 }

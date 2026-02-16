@@ -7,28 +7,7 @@ tags: ["automation","n8n","zapier","lead capture"]
 image: "/images/og/n8n-vs-zapier.svg"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "n8n vs Zapier for Lead Flows: Which Scales Better?",
-  "description": "A pragmatic comparison of n8n and Zapier for scaling lead flows and business automation.",
-  "image": "https://pureons.com/images/og/n8n-vs-zapier.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "Pureons"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Pureons",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://pureons.com/images/logo.jpg"
-    }
-  },
-  "datePublished": "2026-02-15"
-}
-</script>
+
 
 The automation landscape is dominated by two giants: Zapier, the user-friendly incumbent, and n8n, the developer-friendly challenger.
 

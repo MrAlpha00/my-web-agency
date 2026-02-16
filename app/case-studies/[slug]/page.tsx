@@ -57,6 +57,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     const { slug } = await params;
     const { meta, content } = await getPostBySlug('case-studies', slug);
 
+
     if (!meta || !meta.title || meta.title === 'Error' || meta.title === 'Not Found') {
         notFound();
     }

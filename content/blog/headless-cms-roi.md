@@ -7,28 +7,7 @@ tags: ["headless cms","sanity","contentful","web infrastructure"]
 image: "/images/og/headless-cms-roi.svg"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The ROI of Headless CMS: Why Brands Are Ditching WordPress",
-  "description": "A calculated breakdown of why moving to a headless CMS like Sanity or Contentful saves money, increases security, and boosts conversions.",
-  "image": "https://pureons.com/images/og/headless-cms-roi.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "Pureons"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Pureons",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://pureons.com/images/logo.jpg"
-    }
-  },
-  "datePublished": "2026-02-15"
-}
-</script>
+
 
 For over a decade, WordPress was the default choice for building websites. It was easy, cheap, and "good enough."
 

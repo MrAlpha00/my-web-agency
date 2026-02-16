@@ -7,28 +7,7 @@ tags: ["Automation", "Cost Reduction", "AI Agents", "Efficiency"]
 image: "/images/og/automation-costs.svg"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How Automation Reduces 40% Operational Costs in Online Businesses",
-  "description": "Discover how AI agents and workflow automation can cut operational costs by 40% while 10x-ing efficiency. Real-world examples of n8n, Zapier, and autonomous support agents.",
-  "image": "https://pureons.com/images/og/automation-costs.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "Pureons"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Pureons",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://pureons.com/images/logo.jpg"
-    }
-  },
-  "datePublished": "2026-02-15"
-}
-</script>
+
 
 In the high-stakes world of online business, margins are everything. If you are spending 40 hours a week on manual tasks that a robot could do in 4 seconds, you are bleeding capital.
 

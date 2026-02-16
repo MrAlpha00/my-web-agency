@@ -7,28 +7,7 @@ tags: ["web infrastructure","conversion","performance","seo"]
 image: "/images/og/high-conversion-infrastructure.svg"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "High-Conversion Websites: How to Design Web Infrastructure That Actually Sells",
-  "description": "A practical, technical guide to building web infrastructure that increases conversions, reduces cost, and scales with your business.",
-  "image": "https://pureons.com/images/og/high-conversion-infrastructure.svg",
-  "author": {
-    "@type": "Organization",
-    "name": "Pureons"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Pureons",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://pureons.com/images/logo.jpg"
-    }
-  },
-  "datePublished": "2026-02-15"
-}
-</script>
+
 
 Your website is likely losing money. Not because your copy isn't persuasive, or your design isn't pretty—but because your infrastructure is fighting against your users.
 

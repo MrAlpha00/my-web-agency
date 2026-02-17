@@ -13,6 +13,7 @@ export interface Service {
     title: string;
     subtitle: string;
     description: string;
+    iconName: string;
     heroGradient: string;
     problem: {
         title: string;
@@ -84,6 +85,7 @@ export const services: Record<string, Service> = {
         title: "High-Conversion Websites Built to Scale.",
         subtitle: "Speed. Security. Scalability.",
         description: "We design and engineer full-stack web systems that load instantly, convert consistently, and scale effortlessly as your business grows.",
+        iconName: "ServerIcon",
         heroGradient: "from-blue-600 via-indigo-500 to-purple-600",
         problem: {
             title: "Why Most Websites Underperform",
@@ -267,6 +269,7 @@ export const services: Record<string, Service> = {
         title: "AI Agents & Automation",
         subtitle: "Workforce Multipliers.",
         description: "Deploy autonomous AI agents to handle repetitive tasks, customer support, and data processing 24/7.",
+        iconName: "CpuChipIcon",
         heroGradient: "from-emerald-500 via-teal-500 to-cyan-500",
         problem: {
             title: "Human Bottlenecks",
@@ -311,6 +314,7 @@ export const services: Record<string, Service> = {
         title: "Growth Systems Engineering",
         subtitle: "Predictable Revenue Engines.",
         description: "Data-driven marketing and sales infrastructure that fills your pipeline automatically.",
+        iconName: "ArrowTrendingUpIcon",
         heroGradient: "from-orange-500 via-amber-500 to-yellow-500",
         problem: {
             title: "Unpredictable Growth",

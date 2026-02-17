@@ -35,7 +35,7 @@ export default function ServiceFlipCard({ service }: { service: Service }) {
             <motion.div
                 initial={false}
                 animate={{ rotateY: isFlipped ? 180 : 0 }}
-                transition={{ duration: 0.6, animationDirection: "normal" }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="relative h-full w-full shadow-xl transition-all duration-500 [transform-style:preserve-3d]"
             >
                 {/* Front Face */}

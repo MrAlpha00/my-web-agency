@@ -2,30 +2,12 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRightIcon } from '@heroicons/react/24/outline'; // Using heroicons as seen in page.tsx
-
-const solutions = [
-    {
-        title: 'Web Infrastructure',
-        description: 'High-conversion websites and scalable full-stack systems.',
-        href: '/services/infrastructure', // Keeping hrefs consistent with original
-    },
-    {
-        title: 'Automation & AI Agents',
-        description: 'n8n workflows, AI integrations, and intelligent process automation.',
-        href: '/services/automation',
-    },
-    {
-        title: 'Growth Systems',
-        description: 'Conversion funnels, content systems, and lead capture automation.',
-        href: '/services/growth',
-    },
-];
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { services } from '@/lib/services';
 
 export default function CoreSolutions() {
     return (
         <section className="relative py-24 sm:py-32 bg-black overflow-hidden">
-            {/* Background glow effects */}
             {/* Background glow effects - Atmospheric radial glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-indigo-500/10 via-purple-500/10 to-blue-500/10 rounded-full blur-[120px] opacity-20 pointer-events-none" />
 
@@ -52,9 +34,9 @@ export default function CoreSolutions() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-                    {solutions.map((solution, index) => (
+                    {Object.values(services).map((service, index) => (
                         <motion.div
-                            key={solution.title}
+                            key={service.slug}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -62,18 +44,18 @@ export default function CoreSolutions() {
                             className="h-full"
                         >
                             <Link
-                                href={solution.href}
+                                href={`/services/${service.slug}`}
                                 className="group relative flex flex-col justify-between h-full overflow-hidden rounded-2xl bg-white/5 p-8 backdrop-blur-md border border-white/10 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-purple-500/40 hover:shadow-[0_0_40px_rgba(139,92,246,0.2)]"
                             >
-                                {/* Card Hover Gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                {/* Card Hover Gradient - utilizing the gradient from service data */}
+                                <div className={`absolute inset-0 bg-gradient-to-br ${service.heroGradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none`} />
 
                                 <div className="relative z-10">
                                     <h3 className="text-xl font-semibold leading-7 text-white group-hover:text-indigo-200 transition-colors">
-                                        {solution.title}
+                                        {service.title}
                                     </h3>
                                     <p className="mt-4 text-sm leading-6 text-zinc-400 group-hover:text-zinc-300 transition-colors">
-                                        {solution.description}
+                                        {service.description}
                                     </p>
                                 </div>
 

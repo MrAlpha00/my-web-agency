@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { services } from '@/lib/services';
+import ServiceFlipCard from '@/components/ServiceFlipCard';
 import CalendlyPopupButton from '@/components/CalendlyPopupButton';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
     title: 'Services | PUREONS',
@@ -39,42 +39,9 @@ export default function ServicesPage() {
             {/* Services Grid */}
             <section className="relative pb-24 sm:pb-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {Object.values(services).map((service) => (
-                            <div
-                                key={service.slug}
-                                className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-zinc-900/50 border border-white/5 p-8 transition-all hover:border-indigo-500/50 hover:bg-zinc-900/80 hover:shadow-[0_0_40px_-10px_rgba(99,102,241,0.2)]"
-                            >
-                                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.heroGradient} opacity-10 blur-[40px] group-hover:opacity-20 transition-opacity rounded-full -mr-10 -mt-10`} />
-
-                                <div>
-                                    <div className={`mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${service.heroGradient} bg-opacity-10 text-white shadow-lg`}>
-                                        {/* Icons could be mapped here if imports were dynamic, but keeping it simple for now or using generic shape */}
-                                        <div className="h-6 w-6 rounded-full bg-white/20" />
-                                    </div>
-
-                                    <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-                                    <p className="text-sm font-medium text-indigo-400 mb-4 uppercase tracking-wider">{service.subtitle}</p>
-                                    <p className="text-zinc-400 leading-relaxed mb-8">{service.description}</p>
-
-                                    <ul className="mb-8 space-y-3">
-                                        {service.solution.features.slice(0, 3).map((feature, i) => (
-                                            <li key={i} className="flex items-start text-zinc-300 text-sm">
-                                                <span className="mr-3 text-indigo-500">•</span>
-                                                {feature}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                <Link
-                                    href={`/services/${service.slug}`}
-                                    className="inline-flex items-center gap-2 text-sm font-semibold text-white group-hover:text-indigo-400 transition-colors"
-                                >
-                                    Explore Service
-                                    <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                </Link>
-                            </div>
+                            <ServiceFlipCard key={service.slug} service={service} />
                         ))}
                     </div>
                 </div>

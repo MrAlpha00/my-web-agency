@@ -287,7 +287,7 @@ export default function AboutPageContent() {
                             </blockquote>
                             <div className="flex items-center gap-4">
                                 <div>
-                                    <div className="font-bold text-white">Founder Name</div>
+                                    <div className="font-bold text-white">SUHAS M</div>
                                     <div className="text-zinc-500 text-sm">Principal Architect, Pureons</div>
                                 </div>
                             </div>

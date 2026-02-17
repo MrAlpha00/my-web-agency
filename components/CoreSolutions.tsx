@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon } from '@heroicons/react/24/outline'; // Using heroicons as seen in page.tsx
 
@@ -58,25 +59,29 @@ export default function CoreSolutions() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.25, delay: index * 0.1 }}
-                            whileHover={{ scale: 1.02, y: -5 }}
-                            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white/5 p-8 backdrop-blur-md border border-white/10 transition-all duration-300 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/20"
+                            className="h-full"
                         >
-                            {/* Card Hover Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                            <Link
+                                href={solution.href}
+                                className="group relative flex flex-col justify-between h-full overflow-hidden rounded-2xl bg-white/5 p-8 backdrop-blur-md border border-white/10 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-purple-500/40 hover:shadow-[0_0_40px_rgba(139,92,246,0.2)]"
+                            >
+                                {/* Card Hover Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                            <div className="relative z-10">
-                                <h3 className="text-xl font-semibold leading-7 text-white group-hover:text-indigo-200 transition-colors">
-                                    {solution.title}
-                                </h3>
-                                <p className="mt-4 text-sm leading-6 text-zinc-400 group-hover:text-zinc-300 transition-colors">
-                                    {solution.description}
-                                </p>
-                            </div>
+                                <div className="relative z-10">
+                                    <h3 className="text-xl font-semibold leading-7 text-white group-hover:text-indigo-200 transition-colors">
+                                        {solution.title}
+                                    </h3>
+                                    <p className="mt-4 text-sm leading-6 text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                                        {solution.description}
+                                    </p>
+                                </div>
 
-                            <div className="relative z-10 mt-8 flex items-center gap-x-2 text-sm font-medium text-indigo-400 group-hover:text-indigo-300 transition-colors">
-                                Learn more
-                                <ArrowRightIcon className="h-4 w-4 transition-transform duration-[250ms] group-hover:translate-x-1 ease-out" />
-                            </div>
+                                <div className="relative z-10 mt-8 flex items-center gap-x-2 text-sm font-medium text-indigo-400 group-hover:text-indigo-300 transition-colors">
+                                    View Details
+                                    <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                                </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

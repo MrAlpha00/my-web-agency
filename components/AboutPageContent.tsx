@@ -259,34 +259,53 @@ export default function AboutPageContent() {
             </section>
 
             {/* 5. Founder Vision */}
-            <section className="py-24 border-y border-white/5 bg-zinc-900/30">
+            <section className="py-24 border-y border-white/5 bg-zinc-900/30 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        {/* Image Column */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="relative aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-800"
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="relative"
                         >
-                            {/* Placeholder for Founder Image */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900/50 to-purple-900/50 flex items-center justify-center">
-                                <span className="text-zinc-600 font-mono">Founder Image</span>
+                            {/* Background Glow */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-indigo-500/20 rounded-full blur-[80px] -z-10" />
+
+                            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+                                <Image
+                                    src="/images/founderimg.png"
+                                    alt="Suhas M – Founder of Pureons"
+                                    width={600}
+                                    height={800}
+                                    className="w-full h-auto object-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+                                />
+                                {/* Overlay Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                             </div>
                         </motion.div>
 
+                        {/* Text Column */}
                         <motion.div
-                            initial={{ opacity: 0, x: 20 }}
+                            initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                                "Built by engineers. <br /> Driven by outcomes."
+                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                                "Built by engineers. <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Driven by outcomes.</span>"
                             </h2>
-                            <blockquote className="text-lg text-zinc-300 italic mb-6 border-l-2 border-indigo-500 pl-6 py-2">
+
+                            <blockquote className="text-lg md:text-xl text-zinc-300 italic mb-8 border-l-4 border-indigo-500 pl-6 py-1 leading-relaxed">
                                 We realized that modern businesses don't need just another pretty website. They need a revenue engine. A system that works as hard as they do. That's why we started Pureons.
                             </blockquote>
-                            <div className="flex items-center gap-4">
+
+                            <div className="flex items-center gap-5">
+                                <div className="h-12 w-1 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full" />
                                 <div>
+                                    <h3 className="text-xl font-bold text-white tracking-wide">SUHAS M</h3>
+                                    <p className="text-indigo-400 font-medium">Principal Architect, Pureons</p>
                                     <div className="font-bold text-white">SUHAS M</div>
                                     <div className="text-zinc-500 text-sm">Principal Architect, Pureons</div>
                                 </div>

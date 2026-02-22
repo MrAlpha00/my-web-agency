@@ -17,6 +17,9 @@ export const metadata: Metadata = {
         title: 'About Pureons | Engineering Revenue Growth',
         description: 'We design automation-first web systems that scale revenue without scaling headcount.',
     },
+    alternates: {
+        canonical: '/about',
+    },
 };
 
 export default function AboutPage() {

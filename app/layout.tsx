@@ -19,19 +19,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://pureons.vercel.app"),
   title: {
     default: "Pureons - AI Agents & Web Infrastructure",
     template: "%s | Pureons",
   },
   description: "Empowering businesses with next-gen web infrastructure, AI automation, and growth systems.",
+  keywords: [
+    "AI automation agency",
+    "n8n automation",
+    "AI agents development",
+    "Web infrastructure services",
+    "Revenue systems engineering",
+    "Full stack automation company",
+  ],
   openGraph: {
     title: "Pureons - AI Agents & Web Infrastructure",
     description: "Empowering businesses with next-gen web infrastructure, AI automation, and growth systems.",
     url: '/',
-    siteName: 'Pureons',
+    siteName: "PUREONS",
     locale: 'en_US',
-    type: 'website',
+    type: "website",
+  },
+  alternates: {
+    canonical: '/',
   },
   twitter: {
     card: 'summary_large_image',
@@ -53,8 +64,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'PUREONS',
-    url: process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000',
-    logo: 'http://localhost:3000/logo.png', // Placeholder, expecting user to add actual logo later
+    url: process.env.NEXT_PUBLIC_BASE_URL || 'https://pureons.vercel.app',
+    logo: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://pureons.vercel.app'}/logo.png`, // Placeholder, expecting user to add actual logo later
     description: "Empowering businesses with next-gen web infrastructure, AI automation, and growth systems.",
     sameAs: []
   };

@@ -306,6 +306,8 @@ export default function AboutPageContent() {
                                 <div>
                                     <h3 className="text-xl font-bold text-white tracking-wide">SUHAS M</h3>
                                     <p className="text-indigo-400 font-medium">Principal Architect, Pureons</p>
+                                    <div className="font-bold text-white">SUHAS M</div>
+                                    <div className="text-zinc-500 text-sm">Principal Architect, Pureons</div>
                                 </div>
                             </div>
                         </motion.div>

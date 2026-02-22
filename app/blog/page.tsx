@@ -13,6 +13,9 @@ export const metadata = {
         locale: 'en_US',
         type: 'website',
     },
+    alternates: {
+        canonical: '/blog',
+    },
 };
 
 export default async function BlogIndex() {

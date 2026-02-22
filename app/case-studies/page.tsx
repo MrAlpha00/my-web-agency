@@ -6,6 +6,9 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline'; // Assuming heroic
 export const metadata = {
     title: 'Case Studies | PUREONS',
     description: 'Real-world examples of how we help businesses scale with automation and better infrastructure.',
+    alternates: {
+        canonical: '/case-studies',
+    },
 };
 
 export default async function CaseStudiesIndex() {

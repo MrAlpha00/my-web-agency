@@ -14,6 +14,9 @@ export const metadata: Metadata = {
         locale: 'en_US',
         type: 'website',
     },
+    alternates: {
+        canonical: '/pricing',
+    },
 };
 
 const tiers = [
@@ -125,8 +128,8 @@ export default function PricingPage() {
                                 <CalendlyPopupButton
                                     url="https://calendly.com/sm4686771/automation-systems-audit"
                                     className={`block w-full rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${tier.mostPopular
-                                            ? 'bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500'
-                                            : 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white'
+                                        ? 'bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500'
+                                        : 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white'
                                         }`}
                                 >
                                     {tier.cta}

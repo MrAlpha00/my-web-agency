@@ -17,6 +17,9 @@ export const metadata: Metadata = {
         title: 'Careers at Pureons | Join Our Team',
         description: 'Join Pureons and help us build the future of intelligent infrastructure.',
     },
+    alternates: {
+        canonical: '/careers',
+    },
 };
 
 export default function CareersPage() {

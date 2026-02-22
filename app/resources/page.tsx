@@ -5,6 +5,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: 'Resources | Pureons',
     description: 'Free engineering checklists, automation guides, and architectural patterns.',
+    alternates: {
+        canonical: '/resources',
+    },
 };
 
 export default function ResourcesPage() {

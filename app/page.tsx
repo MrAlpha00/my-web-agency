@@ -13,6 +13,7 @@ import TrustBadges from '@/components/TrustBadges';
 import CaseStudyPreview from '@/components/CaseStudyPreview';
 import WhoWeServe from '@/components/WhoWeServe';
 import InteractiveGlowSection from '@/components/InteractiveGlowSection';
+import HomepageMetrics from '@/components/HomepageMetrics';
 
 export default function Home() {
   return (
@@ -73,6 +74,7 @@ export default function Home() {
       </InteractiveGlowSection>
 
       <CoreSolutions />
+      <HomepageMetrics />
       <WhoWeServe />
       <RevenueProcess />
       <TrustBadges />

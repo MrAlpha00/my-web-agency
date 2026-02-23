@@ -23,10 +23,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 
     return {
-        title: service.meta.title,
-        description: service.meta.description,
+        title: service.seoTitle || `${service.title} | PUREONS`,
+        description: service.metaDescription,
+        openGraph: {
+            title: service.seoTitle || service.title,
+            description: service.metaDescription,
+            url: `/services/${service.slug}`,
+        },
         alternates: {
-            canonical: `/services/${slug}`,
+            canonical: `/services/${service.slug}`,
         },
     };
 }
@@ -44,26 +49,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: service.title,
-        description: service.description,
         provider: {
             '@type': 'Organization',
             name: 'PUREONS',
-            url: process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+            url: 'https://pureons.com'
         },
-        serviceType: service.subtitle,
-        areaServed: 'Global',
-        hasOfferCatalog: {
-            '@type': 'OfferCatalog',
-            name: 'Deliverables',
-            itemListElement: service.deliverables.map((item, index) => ({
-                '@type': 'Offer',
-                itemOffered: {
-                    '@type': 'Service',
-                    name: item
-                },
-                position: index + 1
-            }))
-        }
+        description: service.metaDescription
     };
 
     return (

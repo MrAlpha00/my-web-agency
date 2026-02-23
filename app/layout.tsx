@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import FloatingCTA from "@/components/FloatingCTA";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -82,9 +82,9 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <FloatingCTA />
-        <Suspense fallback={null}>
-          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
-        </Suspense>
+        {process.env.NODE_ENV === 'production' && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+        )}
         <Footer />
       </body>
     </html>

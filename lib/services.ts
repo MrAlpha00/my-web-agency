@@ -31,10 +31,8 @@ export interface Service {
         title: string;
         description: string;
     }[];
-    meta: {
-        title: string;
-        description: string;
-    };
+    metaDescription: string;
+    seoTitle?: string;
     audience?: {
         title: string;
         cards: {
@@ -120,10 +118,8 @@ export const services: Record<string, Service> = {
             { step: 3, title: "Migration & Launch", description: "Zero-downtime cutover with automated testing." },
             { step: 4, title: "Scale", description: "Ongoing performance monitoring and optimization." }
         ],
-        meta: {
-            title: "Modern Web Infrastructure Services | Pureons",
-            description: "Upgrade to high-performance, secure web infrastructure with Next.js and edge computing."
-        },
+        seoTitle: "Modern Web Infrastructure Services | Pureons",
+        metaDescription: "Upgrade to high-performance, secure web infrastructure with Next.js and edge computing.",
         audience: {
             title: "Built for Growth-Driven Teams",
             cards: [
@@ -304,10 +300,8 @@ export const services: Record<string, Service> = {
             { step: 3, title: "Integration", description: "Connect agents to your CRM, ERP, and communication tools." },
             { step: 4, title: "Deployment", description: "Live launch with performance monitoring." }
         ],
-        meta: {
-            title: "AI Automation Services | Pureons",
-            description: "Deploy custom AI agents to automate workflows and scale operations."
-        }
+        seoTitle: "AI Automation Services | Pureons",
+        metaDescription: "Deploy custom AI agents to automate workflows and scale operations."
     },
     "growth-systems": {
         slug: "growth-systems",
@@ -349,9 +343,7 @@ export const services: Record<string, Service> = {
             { step: 3, title: "Campaign Launch", description: "Activate data-driven acquisition channels." },
             { step: 4, title: "Optimize", description: "Iterate based on conversion data." }
         ],
-        meta: {
-            title: "Growth Systems Engineering | Pureons",
-            description: "Build predictable revenue engines with advanced growth infrastructure."
-        }
+        seoTitle: "Growth Systems Engineering | Pureons",
+        metaDescription: "Build predictable revenue engines with advanced growth infrastructure."
     }
 };

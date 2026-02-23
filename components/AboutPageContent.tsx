@@ -275,7 +275,7 @@ export default function AboutPageContent() {
 
                             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
                                 <Image
-                                    src="/images/founderimg.png"
+                                    src="/images/founderimg.webp"
                                     alt="Suhas M – Founder of Pureons"
                                     width={600}
                                     height={800}

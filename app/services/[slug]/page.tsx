@@ -23,10 +23,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 
     return {
-        title: service.meta.title,
-        description: service.meta.description,
+        title: service.seoTitle || `${service.title} | PUREONS`,
+        description: service.metaDescription,
+        openGraph: {
+            title: service.seoTitle || service.title,
+            description: service.metaDescription,
+            url: `/services/${service.slug}`,
+        },
         alternates: {
-            canonical: `/services/${slug}`,
+            canonical: `/services/${service.slug}`,
         },
     };
 }

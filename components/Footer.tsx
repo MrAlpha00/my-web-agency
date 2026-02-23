@@ -19,6 +19,10 @@ const navigation = {
         { name: 'Custom Software', href: '/services' },
         { name: 'Performance Optimization', href: '/services' },
     ],
+    legal: [
+        { name: 'Privacy Policy', href: '/privacy' },
+        { name: 'Terms of Service', href: '/terms' },
+    ],
     social: [
         {
             name: 'LinkedIn',
@@ -166,10 +170,17 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="mt-16 border-t border-white/5 pt-8 sm:mt-20 lg:mt-24">
+                <div className="mt-16 border-t border-white/5 pt-8 sm:mt-20 lg:mt-24 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-xs leading-5 text-zinc-500">
                         &copy; {new Date().getFullYear()} Pureons, Inc. All rights reserved.
                     </p>
+                    <div className="flex space-x-6 text-xs leading-5 text-zinc-500">
+                        {navigation.legal.map((item) => (
+                            <Link key={item.name} href={item.href} className="hover:text-white transition-colors">
+                                {item.name}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
         </footer>

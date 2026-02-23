@@ -8,10 +8,11 @@ import EngineeredResults from '@/components/EngineeredResults';
 import FinalCTA from '@/components/FinalCTA';
 import LeadMagnet from '@/components/LeadMagnet';
 import CalendlyPopupButton from '@/components/CalendlyPopupButton';
-import Testimonials from '@/components/Testimonials';
 import TrustBadges from '@/components/TrustBadges';
 import CaseStudyPreview from '@/components/CaseStudyPreview';
 import WhoWeServe from '@/components/WhoWeServe';
+import InteractiveGlowSection from '@/components/InteractiveGlowSection';
+import HomepageMetrics from '@/components/HomepageMetrics';
 import InteractiveGlowSection from '@/components/InteractiveGlowSection';
 
 export default function Home() {

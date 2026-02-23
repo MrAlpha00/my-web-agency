@@ -21,7 +21,7 @@ import CalendlyPopupButton from '@/components/CalendlyPopupButton';
 // 1. Stats Counter Component
 const AnimatedCounter = ({ value, label, suffix = '' }: { value: number; label: string; suffix?: string }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, amount: "some" });
     const springValue = useSpring(0, { bounce: 0, duration: 2000 });
     const [displayValue, setDisplayValue] = useState(0);
 

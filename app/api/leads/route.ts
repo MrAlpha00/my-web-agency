@@ -93,6 +93,22 @@ export async function POST(request: Request) {
             // We do NOT return an error here, because the lead was successfully saved to DB.
         }
 
+        // Send to Slack Webhook (optional backup layer)
+        if (process.env.SLACK_WEBHOOK_URL) {
+            try {
+                await fetch(process.env.SLACK_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-type': 'application/json' },
+                    body: JSON.stringify({
+                        text: `*New Lead Received*\n*Name:* ${name}\n*Email:* ${email}\n*Business Model:* ${businessModel || 'Not provided'}\n*Revenue:* ${revenue_band || 'Not provided'}`
+                    })
+                });
+            } catch (slackError) {
+                console.error('Slack Webhook Error:', slackError);
+                // Do NOT block form if Slack fails
+            }
+        }
+
         return NextResponse.json({
             success: true,
             message: 'Lead received successfully',

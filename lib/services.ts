@@ -119,7 +119,7 @@ export const services: Record<string, Service> = {
             { step: 4, title: "Scale", description: "Ongoing performance monitoring and optimization." }
         ],
         seoTitle: "Modern Web Infrastructure Services | Pureons",
-        metaDescription: "Upgrade to high-performance, secure web infrastructure with Next.js and edge computing."
+        metaDescription: "Upgrade to high-performance, secure web infrastructure with Next.js and edge computing.",
         audience: {
             title: "Built for Growth-Driven Teams",
             cards: [

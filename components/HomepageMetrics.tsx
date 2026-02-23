@@ -5,7 +5,7 @@ import { motion, useInView, useSpring } from 'framer-motion';
 
 const AnimatedCounter = ({ value, suffix = '', prefix = '' }: { value: number; suffix?: string; prefix?: string }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    const isInView = useInView(ref, { once: true, amount: "some" });
     const springValue = useSpring(0, { bounce: 0, duration: 2500 });
     const [displayValue, setDisplayValue] = useState(0);
 

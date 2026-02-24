@@ -15,6 +15,7 @@ import {
 } from '@heroicons/react/24/outline';
 import InteractiveGlowSection from '@/components/InteractiveGlowSection';
 import CalendlyPopupButton from '@/components/CalendlyPopupButton';
+import Link from 'next/link';
 
 // --- Data ---
 const benefits = [
@@ -163,13 +164,13 @@ const JobCard = ({ job }: { job: typeof jobs[0] }) => {
                                     ))}
                                 </ul>
                             </div>
-                            <a
-                                href={`mailto:careers@pureons.com?subject=Application for ${job.title}`}
+                            <Link
+                                href={`/careers/apply?role=${job.title.toLowerCase().replace(/\s+/g, '-')}`}
                                 className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform"
                             >
                                 Apply Now
                                 <ArrowRightIcon className="w-4 h-4" />
-                            </a>
+                            </Link>
                         </div>
                     </motion.div>
                 )}
@@ -292,13 +293,13 @@ export default function CareersPageContent() {
                     <p className="text-xl text-zinc-400 mb-10">
                         We are always looking for exceptional talent. If you think you can help us build the future, we want to hear from you.
                     </p>
-                    <a
-                        href="mailto:careers@pureons.com?subject=General Application"
+                    <Link
+                        href="/careers/apply?role=general-application"
                         className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform"
                     >
                         Send us your portfolio
                         <ArrowRightIcon className="w-5 h-5" />
-                    </a>
+                    </Link>
                 </div>
             </section>
         </main>

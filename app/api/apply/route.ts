@@ -54,8 +54,11 @@ export async function POST(request: Request) {
 
         // 4. Send Email via Resend
         const { data: emailData, error: emailError } = await resend.emails.send({
-            from: 'Careers <careers@pureons.com>', // Requires a verified domain in Resend
-            to: ['careers@pureons.com'],
+            // Resend requires a verified domain to use a custom sender.
+            // For testing without a verified domain, use 'onboarding@resend.dev'.
+            // Note: When using 'onboarding@resend.dev', you can ONLY send emails TO the email address you registered your Resend account with.
+            from: 'Careers <onboarding@resend.dev>', // Change to 'Careers <careers@pureons.com>' after verifying pureons.com
+            to: ['careers@pureons.com'], // IMPORTANT: Change this to your registered Resend email for testing if pureons.com is not verified
             replyTo: email,
             subject: `${subject} – ${fullName}`,
             text: `

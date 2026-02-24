@@ -21,10 +21,12 @@ export const metadata: Metadata = {
 
 const tiers = [
     {
-        name: 'Audit & Strategy',
+        name: 'Website & Business Strategy Audit',
         id: 'tier-audit',
         href: '#',
-        price: { monthly: '$2,500', annually: '$2,500' },
+        pricePrefix: 'Starting at',
+        price: '$2,000',
+        billingTerm: 'One-time investment',
         description: 'Deep-dive analysis of your current infrastructure, identifying bottlenecks and growth opportunities.',
         features: [
             'Full Technical Stack Audit',
@@ -33,31 +35,35 @@ const tiers = [
             'Security Vulnerability Scan',
             'Migration/Upgrade Roadmap',
         ],
-        cta: 'Book Audit Call',
+        cta: 'Start with Strategy Call',
         mostPopular: false,
     },
     {
-        name: 'Infrastructure Build',
+        name: 'High-Performance Website System',
         id: 'tier-build',
         href: '#',
-        price: { monthly: 'Custom', annually: 'Custom' },
-        description: 'End-to-end engineering of your high-performance web system. We build the engine; you drive the growth.',
+        pricePrefix: '',
+        price: 'Custom',
+        billingTerm: 'Project-based',
+        description: 'We design and build a website that loads fast, ranks on Google, and converts visitors into clients.',
         features: [
             'Next.js / Headless CMS Build',
-            'Global Edge Network Setup',
+            'Fast global performance',
             'Custom CI/CD Pipelines',
-            'Core Web Vitals Optimization',
+            'Optimized for Google ranking',
             'Analytics & Tracking Setup',
             'Launch Support & Training',
         ],
-        cta: 'Get a Proposal',
+        cta: 'Get My Custom Proposal',
         mostPopular: true,
     },
     {
-        name: 'Growth Partner',
+        name: 'Ongoing Growth & Automation Support',
         id: 'tier-partner',
         href: '#',
-        price: { monthly: 'Retainer', annually: 'Retainer' },
+        pricePrefix: '',
+        price: 'Retainer',
+        billingTerm: 'Monthly engagement',
         description: 'Ongoing engineering and automation support to scale your revenue operations continuously.',
         features: [
             'Dedicated Engineering Team',
@@ -67,7 +73,7 @@ const tiers = [
             'New Automation Workflows',
             'Priority Support',
         ],
-        cta: 'Discuss Partnership',
+        cta: 'Schedule Growth Call',
         mostPopular: false,
     },
 ];
@@ -93,7 +99,7 @@ export default function PricingPage() {
                     {tiers.map((tier, tierIdx) => (
                         <div
                             key={tier.id}
-                            className={`flex flex-col justify-between rounded-3xl p-8 ring-1 ring-white/10 xl:p-10 ${tier.mostPopular ? 'bg-zinc-900/50 ring-indigo-500 shadow-[0_0_40px_-10px_rgba(99,102,241,0.3)]' : 'bg-zinc-900/20'
+                            className={`flex flex-col justify-between rounded-3xl p-8 ring-1 ring-white/10 xl:p-10 transition-all ${tier.mostPopular ? 'bg-zinc-900/50 ring-indigo-500 shadow-[0_0_40px_-10px_rgba(99,102,241,0.3)]' : 'bg-zinc-900/20'
                                 }`}
                         >
                             <div>
@@ -112,8 +118,12 @@ export default function PricingPage() {
                                     ) : null}
                                 </div>
                                 <p className="mt-4 text-sm leading-6 text-zinc-400">{tier.description}</p>
-                                <div className="mt-6 flex items-baseline gap-x-1">
-                                    <span className="text-4xl font-bold tracking-tight text-white">{tier.price.monthly}</span>
+                                <div className="mt-6 flex flex-col gap-y-1">
+                                    <div className="flex items-baseline gap-x-2">
+                                        {tier.pricePrefix && <span className="text-lg font-semibold text-zinc-400">{tier.pricePrefix}</span>}
+                                        <span className="text-4xl font-bold tracking-tight text-white">{tier.price}</span>
+                                    </div>
+                                    {tier.billingTerm && <span className="text-sm font-medium text-zinc-500">{tier.billingTerm}</span>}
                                 </div>
                                 <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-zinc-300">
                                     {tier.features.map((feature) => (
@@ -127,9 +137,9 @@ export default function PricingPage() {
                             <div className="mt-8">
                                 <CalendlyPopupButton
                                     url="https://calendly.com/sm4686771/automation-systems-audit"
-                                    className={`block w-full rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${tier.mostPopular
-                                        ? 'bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500'
-                                        : 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white'
+                                    className={`block w-full rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all duration-200 ${tier.mostPopular
+                                        ? 'bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 hover:shadow-indigo-500/25 hover:-translate-y-0.5 focus-visible:outline-indigo-500'
+                                        : 'bg-white/10 text-white hover:bg-white/20 hover:-translate-y-0.5 focus-visible:outline-white'
                                         }`}
                                 >
                                     {tier.cta}
@@ -137,6 +147,54 @@ export default function PricingPage() {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="mt-16 sm:mt-20 mx-auto max-w-3xl text-center">
+                    <p className="text-xl font-medium text-white/90 tracking-wide bg-zinc-900/50 py-4 px-8 rounded-2xl border border-white/10 shadow-xl">
+                        No hourly billing. No hidden fees. Clear scope. Clear outcomes.
+                    </p>
+                </div>
+
+                <div className="mt-24 mx-auto max-w-5xl md:mt-32">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                            Which Plan Is Right For You?
+                        </h2>
+                    </div>
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+                        <div className="bg-zinc-900/40 rounded-2xl p-8 border border-white/5 transition hover:border-indigo-500/30 hover:bg-zinc-900/60">
+                            <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                                <span className="h-2 w-2 rounded-full bg-indigo-400"></span>
+                                Audit
+                            </h3>
+                            <p className="text-base text-zinc-400 leading-relaxed">
+                                Best for founders who want clarity before investing.
+                            </p>
+                        </div>
+                        <div className="bg-zinc-900/40 rounded-2xl p-8 border border-white/5 transition hover:border-indigo-500/30 hover:bg-zinc-900/60 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 p-4 opacity-10">
+                                <svg className="w-24 h-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2 relative z-10">
+                                <span className="h-2 w-2 rounded-full bg-purple-400"></span>
+                                Website System
+                            </h3>
+                            <p className="text-base text-zinc-400 leading-relaxed relative z-10">
+                                Best for companies ready to build or rebuild their website properly.
+                            </p>
+                        </div>
+                        <div className="bg-zinc-900/40 rounded-2xl p-8 border border-white/5 transition hover:border-indigo-500/30 hover:bg-zinc-900/60">
+                            <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                                <span className="h-2 w-2 rounded-full bg-blue-400"></span>
+                                Growth Support
+                            </h3>
+                            <p className="text-base text-zinc-400 leading-relaxed">
+                                Best for businesses scaling monthly and needing continuous improvement.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

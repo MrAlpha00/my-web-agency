@@ -5,23 +5,34 @@ import { motion, useInView, useSpring } from 'framer-motion';
 
 const AnimatedCounter = ({ value, suffix = '', prefix = '' }: { value: number; suffix?: string; prefix?: string }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: "some" });
-    const springValue = useSpring(0, { bounce: 0, duration: 2500 });
-    const [displayValue, setDisplayValue] = useState(0);
+    // Use amount: 0.5 so it only triggers when well within viewport
+    const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+    // Start at 1 instead of 0 to ensure mobile doesn't show 0
+    const springValue = useSpring(1, { bounce: 0, duration: 2500 });
+
+    // Initialize with final value for SSR, then switch to starting value on mount
+    const [displayValue, setDisplayValue] = useState(value);
+    const [hasMounted, setHasMounted] = useState(false);
 
     useEffect(() => {
-        if (isInView) {
+        setHasMounted(true);
+        setDisplayValue(1);
+    }, []);
+
+    useEffect(() => {
+        if (hasMounted && isInView) {
             springValue.set(value);
         }
-    }, [isInView, value, springValue]);
+    }, [isInView, value, springValue, hasMounted]);
 
     useEffect(() => {
+        if (!hasMounted) return;
         return springValue.on("change", (latest) => {
             setDisplayValue(Math.floor(latest));
         });
-    }, [springValue]);
+    }, [springValue, hasMounted]);
 
-    // Format numbers like 3.2 differently if needed or handle simple numbers
     return (
         <span ref={ref} className="tabular-nums">
             {prefix}{displayValue}{suffix}
@@ -43,64 +54,76 @@ export default function HomepageMetrics() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-50px" }}
                         transition={{ delay: 0.1, duration: 0.6 }}
                         className="text-center group"
                     >
-                        <div className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                        <div className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white mb-2 group-hover:text-indigo-400 transition-colors">
                             <AnimatedCounter value={50} suffix="+" />
                         </div>
-                        <div className="text-sm md:text-base text-zinc-500 uppercase tracking-widest font-medium">
-                            Systems Engineered
+                        <div className="text-sm md:text-base text-zinc-400 uppercase tracking-widest font-semibold">
+                            Revenue Systems Built
                         </div>
                     </motion.div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-50px" }}
                         transition={{ delay: 0.2, duration: 0.6 }}
                         className="text-center group"
                     >
-                        <div className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                        <div className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white mb-2 group-hover:text-purple-400 transition-colors">
                             <AnimatedCounter value={120} suffix="+" />
                         </div>
-                        <div className="text-sm md:text-base text-zinc-500 uppercase tracking-widest font-medium">
-                            Workflows Built
+                        <div className="text-sm md:text-base text-zinc-400 uppercase tracking-widest font-semibold">
+                            Automation Workflows Deployed
                         </div>
                     </motion.div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-50px" }}
                         transition={{ delay: 0.3, duration: 0.6 }}
                         className="text-center group"
                     >
-                        <div className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                            <AnimatedCounter prefix="$" value={3.2} suffix="M+" />
+                        <div className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                            <AnimatedCounter prefix="$" value={3} suffix="M+" />
                         </div>
-                        <div className="text-sm md:text-base text-zinc-500 uppercase tracking-widest font-medium">
-                            Revenue Impacted
+                        <div className="text-sm md:text-base text-zinc-400 uppercase tracking-widest font-semibold">
+                            Client Revenue Generated
                         </div>
                     </motion.div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-50px" }}
                         transition={{ delay: 0.4, duration: 0.6 }}
                         className="text-center group"
                     >
-                        <div className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
-                            <AnimatedCounter value={99.9} suffix="%" />
+                        <div className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                            <AnimatedCounter value={99} suffix="% " />
                         </div>
-                        <div className="text-sm md:text-base text-zinc-500 uppercase tracking-widest font-medium">
-                            Performance Uptime
+                        <div className="text-sm md:text-base text-zinc-400 uppercase tracking-widest font-semibold">
+                            System Uptime Guarantee
                         </div>
                     </motion.div>
 
                 </div>
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6, duration: 0.8 }}
+                    className="mt-16 text-center"
+                >
+                    <p className="text-sm md:text-base text-zinc-500 font-medium tracking-wide">
+                        Results built through real client implementations.
+                    </p>
+                </motion.div>
             </div>
         </section>
     );

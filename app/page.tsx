@@ -15,6 +15,7 @@ import WhoWeServe from '@/components/WhoWeServe';
 import InteractiveGlowSection from '@/components/InteractiveGlowSection';
 import HomepageMetrics from '@/components/HomepageMetrics';
 import HeroSculpture from '@/components/HeroSculpture';
+import HeroFeatureStrip from '@/components/HeroFeatureStrip';
 
 export default function Home() {
   return (
@@ -50,13 +51,12 @@ export default function Home() {
           }}
         />
 
-        <div className="relative z-10 px-6 lg:px-8 max-w-7xl mx-auto text-center">
+        <div className="relative z-10 px-6 lg:px-8 max-w-7xl mx-auto text-center pt-8 md:pt-16">
           {/* Radial gradient behind headline for extra type contrast */}
           <div
             className="absolute inset-0 pointer-events-none -z-[1]"
             style={{
-              background:
-                'radial-gradient(ellipse 70% 60% at 50% 45%, rgba(99,80,255,0.10) 0%, transparent 70%)',
+              background: 'radial-gradient(ellipse 70% 60% at 50% 45%, var(--color-hero-pulse) 0%, transparent 60%)',
             }}
           />
           <motion.div
@@ -70,34 +70,47 @@ export default function Home() {
               <span className="text-sm font-medium text-zinc-300">Accepting New Enterprise Clients</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/50 pb-2">
+            <h1
+              className="text-[56px] sm:text-7xl lg:text-[96px] font-bold tracking-[-0.02em] leading-[1.1] text-transparent bg-clip-text pb-2 relative"
+              style={{
+                backgroundImage: 'linear-gradient(90deg, #8b6bff 0%, #a06bff 100%)',
+                // Fallback blurred shadow for legibility over the sculpture
+                textShadow: '0 4px 30px rgba(139, 107, 255, 0.4)'
+              }}
+            >
               We Build Revenue Systems
               <br />
-              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">That Work 24/7.</span>
+              <span className="text-white drop-shadow-md">That Work 24/7.</span>
             </h1>
 
-            <p className="mt-6 text-lg md:text-xl leading-8 text-zinc-400 max-w-3xl mx-auto">
+            <p className="mt-6 text-[20px] md:text-[24px] leading-[1.4] font-medium text-var(--color-hero-text-muted) max-w-3xl mx-auto">
               Leverage AI, intelligent automation, and next-gen web infrastructure to scale your business operations without scaling headcount.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
               <CalendlyPopupButton
                 url="https://calendly.com/sm4686771/automation-systems-audit"
-                className="group relative inline-flex items-center justify-center w-full sm:w-auto rounded-full bg-white px-8 py-4 text-base font-semibold text-black transition-all hover:scale-105 hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="group relative inline-flex items-center justify-center w-full sm:w-auto rounded-full bg-white px-8 py-4 text-[16px] leading-[1.6] font-semibold text-black transition-all duration-300 hover:ring-2 hover:ring-[#8b6bff]/50 hover:shadow-[0_8px_20px_rgba(139,107,255,0.25)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 <span className="relative z-10">Get Your Growth Architecture Review</span>
-                <div className="absolute inset-0 -z-10 rounded-full bg-white blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+                <div className="absolute inset-0 -z-10 rounded-full bg-white blur-md opacity-50 group-hover:opacity-100 transition-opacity duration-300 animate-[sculptureBloom_8s_ease-in-out_infinite] motion-reduce:animate-none" />
               </CalendlyPopupButton>
+
               <Link
                 href="/services"
-                className="text-base font-semibold leading-6 text-white hover:text-indigo-400 transition-colors flex items-center justify-center gap-2 group w-full sm:w-auto py-2"
+                className="relative text-[16px] leading-[1.6] font-semibold text-white transition-colors group py-2"
               >
                 See Services
-                <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform">→</span>
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1 ml-1">→</span>
+                {/* Horizontal scale underline anim on hover */}
+                <span className="absolute left-0 bottom-1 w-full h-[1px] bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
               </Link>
             </div>
           </motion.div>
         </div>
+
+        {/* The 4-column feature strip inspired by n8n.io */}
+        <HeroFeatureStrip />
 
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20 pointer-events-none" />

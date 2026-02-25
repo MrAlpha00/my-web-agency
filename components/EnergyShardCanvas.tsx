@@ -189,7 +189,7 @@ export default function EnergyShardCanvas() {
                     <Environment preset="city" />
 
                     {/* Controlled Post-processing Bloom */}
-                    <EffectComposer disableNormalPass multisampling={4}>
+                    <EffectComposer multisampling={4}>
                         <Bloom
                             luminanceThreshold={0.5} // Only bloom the bright emissive edges
                             luminanceSmoothing={0.4}

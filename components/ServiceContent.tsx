@@ -21,7 +21,7 @@ import Link from 'next/link';
 import CalendlyPopupButton from '@/components/CalendlyPopupButton';
 import { useState } from 'react';
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, React.ElementType<any>> = {
     window: WindowIcon,
     server: ServerStackIcon,
     cursor: CursorArrowRaysIcon,
@@ -200,6 +200,7 @@ export default function ServiceContent({ service }: { service: Service }) {
                                         className="p-8 rounded-2xl bg-zinc-900/30 border border-white/5 hover:bg-zinc-900/60 hover:border-indigo-500/30 transition-all duration-300 group"
                                     >
                                         <div className="h-12 w-12 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:bg-indigo-500/20 transition-colors">
+                                            {/* @ts-expect-error - React 18 types strictly infer never on dynamic Icon component props here */}
                                             <Icon className="h-6 w-6 text-indigo-400 group-hover:text-indigo-300" />
                                         </div>
                                         <h3 className="text-xl font-bold text-white mb-3">

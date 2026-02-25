@@ -3,134 +3,90 @@
 import { motion } from 'framer-motion';
 
 /**
- * HeroSculpture — A stylized lightning / flame SVG sculpture
- * anchored to the right side of the hero section.
- *
- * Layers:
- *   1. Outer aura   — large, very blurred, slow breathing
- *   2. Mid bloom    — medium blur, screen‑blended glow
- *   3. Inner core   — crisp SVG paths with subtle scale oscillation
- *   4. Bright pulse — occasional flash overlay
+ * HeroSculpture — N8N inspired animated sculpture.
+ * 
+ * Uses a layered approach:
+ * 1. Base radial glow.
+ * 2. Static SVG mask with an animated gradient/noise backdrop.
+ * 3. Occasional bright pulse.
+ * 
+ * Performance: Uses native CSS transforms and avoids heavy WebGL/Lottie dependencies.
  */
 export default function HeroSculpture() {
-    /* ── shared SVG paths (lightning / flame hybrid) ─────────────── */
-    const flamePath =
-        'M200 450 Q160 350 200 260 Q220 200 190 140 Q170 80 210 20 Q230 80 250 140 Q270 200 240 260 Q280 350 240 450 Z';
-    const lightningPath =
-        'M220 460 L230 300 L260 310 L240 180 L270 190 L235 20 L225 160 L200 150 L215 280 L185 270 Z';
-    const secondaryFlamePath =
-        'M180 450 Q140 370 170 300 Q190 250 165 190 Q150 140 180 80 Q205 140 195 200 Q210 260 195 320 Q220 380 195 450 Z';
-
     return (
         <div
-            className="absolute top-0 right-0 w-[55%] h-full pointer-events-none select-none hidden md:block"
+            className="absolute top-[5%] right-[-5%] w-[60%] h-[90%] pointer-events-none select-none hidden md:block"
             aria-hidden="true"
         >
-            {/* ── Layer 1 — Outer aura ──────────────────────────────── */}
+            {/* ── Layer 1 — Base ambient glow ──────────────────────────────── */}
             <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                animate={{ opacity: [0.3, 0.5, 0.3], scale: [0.95, 1.02, 0.95] }}
-                transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute inset-0 flex items-center justify-center -z-10"
+                animate={{ opacity: [0.15, 0.25, 0.15], scale: [0.95, 1.05, 0.95] }}
+                transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
             >
-                <svg
-                    viewBox="0 0 440 500"
-                    className="w-[90%] h-[90%] max-h-[700px]"
+                <div
+                    className="w-[80%] h-[80%] rounded-full opacity-60 mix-blend-screen blur-[100px]"
                     style={{
-                        filter: 'blur(60px)',
-                        mixBlendMode: 'screen',
+                        background: 'radial-gradient(circle at center, #ff6bcb 0%, #ffb86b 40%, transparent 70%)',
+                    }}
+                />
+            </motion.div>
+
+            {/* ── Layer 2 — The masked fire sculpture ──────────────────────── */}
+            <motion.div
+                className="absolute inset-0 flex items-center justify-center overflow-hidden"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.5, ease: 'easeOut', delay: 0.2 }}
+            >
+                <motion.div
+                    animate={{ y: [-10, 10, -10] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                    className="relative w-[300px] h-[600px] lg:w-[400px] lg:h-[700px]"
+                    style={{
+                        // A sharp, unified lightning bolt style shape serving as the mask
+                        WebkitMaskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M250,50 L200,300 L280,300 L150,650 L180,380 L100,380 Z' fill='black'/%3E%3C/svg%3E")`,
+                        WebkitMaskSize: 'contain',
+                        WebkitMaskPosition: 'center',
+                        WebkitMaskRepeat: 'no-repeat',
+                        maskImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M250,50 L200,300 L280,300 L150,650 L180,380 L100,380 Z' fill='black'/%3E%3C/svg%3E")`,
+                        maskSize: 'contain',
+                        maskPosition: 'center',
+                        maskRepeat: 'no-repeat',
+                        // Inner shadow/glow to define the shape edges
+                        filter: 'drop-shadow(0 0 30px rgba(255,107,203,0.4))',
                     }}
                 >
-                    <defs>
-                        <radialGradient id="auraGrad" cx="50%" cy="45%" r="55%">
-                            <stop offset="0%" stopColor="#7c3aed" stopOpacity="0.5" />
-                            <stop offset="50%" stopColor="#6366f1" stopOpacity="0.25" />
-                            <stop offset="100%" stopColor="#1e1b4b" stopOpacity="0" />
-                        </radialGradient>
-                    </defs>
-                    <ellipse cx="220" cy="240" rx="200" ry="230" fill="url(#auraGrad)" />
-                </svg>
+                    {/* Animated gradient simulating fire #ffb86b -> #ff6bcb */}
+                    <div
+                        className="absolute inset-[-50%]"
+                        style={{
+                            background: 'linear-gradient(135deg, #07070a 0%, #ff6bcb 30%, #ffb86b 70%, #07070a 100%)',
+                            backgroundSize: '200% 200%',
+                            animation: 'fireGradientFlow 8s ease infinite',
+                        }}
+                    />
+                </motion.div>
             </motion.div>
 
-            {/* ── Layer 2 — Mid bloom ───────────────────────────────── */}
+            {/* ── Layer 3 — Very bright pulse flash (every ~8s) ────────────── */}
             <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                animate={{ opacity: [0.45, 0.7, 0.45], scale: [0.98, 1.04, 0.98] }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-            >
-                <svg
-                    viewBox="0 0 440 500"
-                    className="w-[70%] h-[70%] max-h-[560px]"
-                    style={{
-                        filter: 'blur(30px)',
-                        mixBlendMode: 'screen',
-                    }}
-                >
-                    <defs>
-                        <linearGradient id="bloomGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.6" />
-                            <stop offset="50%" stopColor="#818cf8" stopOpacity="0.4" />
-                            <stop offset="100%" stopColor="#6366f1" stopOpacity="0.15" />
-                        </linearGradient>
-                    </defs>
-                    <path d={flamePath} fill="url(#bloomGrad)" />
-                    <path d={secondaryFlamePath} fill="url(#bloomGrad)" opacity="0.6" />
-                </svg>
-            </motion.div>
-
-            {/* ── Layer 3 — Inner core (crisp paths) ────────────────── */}
-            <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                animate={{ scale: [1, 1.03, 1], opacity: [0.8, 1, 0.8] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            >
-                <svg
-                    viewBox="0 0 440 500"
-                    className="w-[60%] h-[60%] max-h-[480px]"
-                    style={{ filter: 'blur(2px)', mixBlendMode: 'screen' }}
-                >
-                    <defs>
-                        <linearGradient id="coreGrad" x1="50%" y1="100%" x2="50%" y2="0%">
-                            <stop offset="0%" stopColor="#c4b5fd" stopOpacity="0.8" />
-                            <stop offset="40%" stopColor="#a78bfa" stopOpacity="0.9" />
-                            <stop offset="100%" stopColor="#e0e7ff" stopOpacity="1" />
-                        </linearGradient>
-                        <linearGradient id="boltGrad" x1="50%" y1="100%" x2="50%" y2="0%">
-                            <stop offset="0%" stopColor="#818cf8" stopOpacity="0.7" />
-                            <stop offset="100%" stopColor="#f5f3ff" stopOpacity="0.95" />
-                        </linearGradient>
-                    </defs>
-                    <path d={flamePath} fill="url(#coreGrad)" opacity="0.7" />
-                    <path d={lightningPath} fill="url(#boltGrad)" opacity="0.85" />
-                    <path d={secondaryFlamePath} fill="url(#coreGrad)" opacity="0.45" />
-                </svg>
-            </motion.div>
-
-            {/* ── Layer 4 — Bright pulse flash ──────────────────────── */}
-            <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                animate={{ opacity: [0, 0, 0, 0.9, 0] }}
+                className="absolute inset-0 flex items-center justify-center mix-blend-screen"
+                animate={{ opacity: [0, 0, 0, 0, 0.8, 0] }}
                 transition={{
-                    duration: 6,
+                    duration: 10,
                     repeat: Infinity,
                     ease: 'easeOut',
-                    times: [0, 0.85, 0.9, 0.93, 1],
+                    times: [0, 0.4, 0.8, 0.9, 0.95, 1],
                 }}
             >
-                <svg
-                    viewBox="0 0 440 500"
-                    className="w-[55%] h-[55%] max-h-[440px]"
+                <div
+                    className="w-[60%] h-[60%] rounded-full blur-[80px]"
                     style={{
-                        filter: 'blur(12px)',
-                        mixBlendMode: 'screen',
+                        background: 'var(--color-hero-pulse)',
                     }}
-                >
-                    <path d={lightningPath} fill="#e0e7ff" opacity="0.9" />
-                    <path d={flamePath} fill="#c4b5fd" opacity="0.5" />
-                </svg>
+                />
             </motion.div>
-
-            {/* ── Mobile-only subtle glow (shown below md) ──────────── */}
-            {/* This is handled via the vignette/radial gradient in page.tsx */}
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import { GoogleAnalytics } from '@next/third-parties/google';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -73,7 +73,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white selection:bg-indigo-500/30`}
+        className={`${inter.variable} ${geistMono.variable} antialiased text-white selection:bg-indigo-500/30`}
+        style={{ backgroundColor: '#07070a' }}
       >
         <script
           type="application/ld+json"

@@ -14,11 +14,11 @@ import CaseStudyPreview from '@/components/CaseStudyPreview';
 import WhoWeServe from '@/components/WhoWeServe';
 import InteractiveGlowSection from '@/components/InteractiveGlowSection';
 import HomepageMetrics from '@/components/HomepageMetrics';
+import HeroSculpture from '@/components/HeroSculpture';
 
 export default function Home() {
   return (
     <main className="bg-black selection:bg-indigo-500/30">
-      {/* Hero Section */}
       {/* Hero Section */}
       <InteractiveGlowSection className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Abstract Background Elements */}
@@ -28,7 +28,37 @@ export default function Home() {
           <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[50%] bg-blue-900/10 rounded-full blur-[120px] animate-pulse delay-2000" />
         </div>
 
+        {/* Animated Lightning / Flame Sculpture — right side */}
+        <HeroSculpture />
+
+        {/* Vignette overlay — darkens edges for contrast */}
+        <div
+          className="absolute inset-0 pointer-events-none z-[5]"
+          style={{
+            background:
+              'radial-gradient(ellipse 60% 60% at 40% 50%, transparent 0%, rgba(0,0,0,0.55) 100%)',
+            animation: 'vignetteBreath 12s ease-in-out infinite',
+          }}
+        />
+
+        {/* Mobile-only subtle glow (replaces sculpture below md) */}
+        <div
+          className="absolute inset-0 pointer-events-none md:hidden"
+          style={{
+            background:
+              'radial-gradient(ellipse 80% 50% at 60% 40%, rgba(99,80,255,0.12) 0%, transparent 70%)',
+          }}
+        />
+
         <div className="relative z-10 px-6 lg:px-8 max-w-7xl mx-auto text-center">
+          {/* Radial gradient behind headline for extra type contrast */}
+          <div
+            className="absolute inset-0 pointer-events-none -z-[1]"
+            style={{
+              background:
+                'radial-gradient(ellipse 70% 60% at 50% 45%, rgba(99,80,255,0.10) 0%, transparent 70%)',
+            }}
+          />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

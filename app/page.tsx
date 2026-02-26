@@ -13,7 +13,7 @@ import TrustBadges from '@/components/TrustBadges';
 import CaseStudyPreview from '@/components/CaseStudyPreview';
 import WhoWeServe from '@/components/WhoWeServe';
 import HomepageMetrics from '@/components/HomepageMetrics';
-import HeroFeatureStrip from '@/components/HeroFeatureStrip';
+
 
 export default function Home() {
   return (
@@ -91,10 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The 4-column feature strip inspired by n8n.io */}
-      <div className="-mt-8 lg:-mt-16 mb-24 relative z-20 w-full">
-        <HeroFeatureStrip />
-      </div>
+
 
       <CoreSolutions />
       <HomepageMetrics />

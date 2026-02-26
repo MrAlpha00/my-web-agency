@@ -38,18 +38,17 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left z-20 max-w-[620px] 2xl:max-w-[680px] w-full mx-auto lg:mx-0 px-6 lg:px-0 lg:pl-[10%] lg:pr-8"
           >
-            <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-sm mb-6 lg:mb-8 mx-auto lg:mx-0">
+            <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-sm mb-6 lg:mb-8 mx-auto lg:mx-0 mt-[40px]">
               <span className="flex h-2 w-2 rounded-full bg-[#FF6A00] animate-pulse"></span>
               <span className="text-sm font-medium text-zinc-300">Accepting New Enterprise Clients</span>
             </div>
 
-            <h1 className="w-full text-[38px] md:text-[48px] lg:text-[64px] 2xl:text-[72px] font-[800] tracking-[-1px] leading-[1.05] text-[#FFFFFF] drop-shadow-lg pb-2 max-w-[18ch]">
-              We Build Revenue Systems
-              <br className="hidden sm:block" />
+            <h1 className="w-full text-[38px] md:text-[48px] lg:text-[64px] 2xl:text-[72px] font-[800] tracking-[-1px] leading-[1.05] text-[#FFFFFF] drop-shadow-lg pb-2 max-w-[900px]">
+              <span className="lg:whitespace-nowrap block">We Build Revenue Systems</span>
               {' '}
               {/* Gradient only on specific words */}
               <span
-                className="text-transparent bg-clip-text relative inline-block"
+                className="text-transparent bg-clip-text relative inline-block lg:mt-2"
                 style={{
                   backgroundImage: 'linear-gradient(90deg, #FF6A00 0%, #FF2E00 100%)',
                   WebkitBackgroundClip: 'text',

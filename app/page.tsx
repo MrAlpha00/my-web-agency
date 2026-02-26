@@ -36,14 +36,14 @@ export default function Home() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left z-20 max-w-[600px] w-full mx-auto lg:mx-0 px-6 lg:px-0 lg:pl-[12%]"
+            className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left z-20 max-w-[620px] 2xl:max-w-[680px] w-full mx-auto lg:mx-0 px-6 lg:px-0 lg:pl-[10%] lg:pr-8"
           >
             <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-sm mb-6 lg:mb-8 mx-auto lg:mx-0">
               <span className="flex h-2 w-2 rounded-full bg-[#FF6A00] animate-pulse"></span>
               <span className="text-sm font-medium text-zinc-300">Accepting New Enterprise Clients</span>
             </div>
 
-            <h1 className="text-[52px] md:text-[64px] lg:text-[76px] xl:text-[88px] font-[800] tracking-[-0.5px] leading-[1.1] text-[#FFFFFF] drop-shadow-lg pb-2">
+            <h1 className="w-full text-[38px] md:text-[48px] lg:text-[64px] 2xl:text-[72px] font-[800] tracking-[-1px] leading-[1.05] text-[#FFFFFF] drop-shadow-lg pb-2 max-w-[18ch]">
               We Build Revenue Systems
               <br className="hidden sm:block" />
               {' '}
@@ -60,11 +60,11 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="mt-[24px] lg:mt-[32px] text-[16px] lg:text-[18px] leading-[1.6] font-normal text-[#A1A1AA] opacity-90 max-w-[600px] mx-auto lg:mx-0">
+            <p className="mt-[24px] text-[16px] lg:text-[18px] leading-[1.6] font-normal text-[#A1A1AA] opacity-90 max-w-[520px] mx-auto lg:mx-0">
               Leverage AI, intelligent automation, and next-gen web infrastructure to scale your business operations without scaling headcount.
             </p>
 
-            <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 sm:gap-6 w-full sm:w-auto">
+            <div className="mt-[32px] flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-[16px] w-full sm:w-auto">
               {/* CTA Primary */}
               <CalendlyPopupButton
                 url="https://calendly.com/sm4686771/automation-systems-audit"

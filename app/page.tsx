@@ -55,7 +55,7 @@ export default function Home() {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                That Work 24/7.
+                That Work <RotatingText words={["Automatically.", "24/7.", "At Scale.", "Without Hiring.", "On Autopilot."]} mode="slide" className="text-white" />
               </span>
             </h1>
 

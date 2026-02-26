@@ -13,6 +13,7 @@ interface RotatingTextProps {
     interval?: number;
     mode?: AnimationMode;
     className?: string;
+    style?: React.CSSProperties;
 }
 
 const animations: Record<
@@ -51,6 +52,7 @@ export function RotatingText({
     interval = 2500,
     mode = "slide",
     className,
+    style,
 }: RotatingTextProps) {
     const [index, setIndex] = useState(0);
 
@@ -71,7 +73,7 @@ export function RotatingText({
                 "relative inline-flex overflow-hidden justify-items-start whitespace-nowrap",
                 className
             )}
-            style={{ perspective: mode === "flip" ? 600 : undefined }}
+            style={{ perspective: mode === "flip" ? 600 : undefined, ...style }}
         >
             {/* invisible placeholder for width */}
             <span className="invisible px-1">

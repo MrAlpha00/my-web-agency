@@ -13,6 +13,7 @@ import TrustBadges from '@/components/TrustBadges';
 import CaseStudyPreview from '@/components/CaseStudyPreview';
 import WhoWeServe from '@/components/WhoWeServe';
 import HomepageMetrics from '@/components/HomepageMetrics';
+import { RotatingText } from '@/components/ui/rotating-text';
 
 
 export default function Home() {

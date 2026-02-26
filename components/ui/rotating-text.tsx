@@ -1,10 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, TargetAndTransition, VariantLabels } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 
 type AnimationMode = "slide" | "fade" | "blur" | "flip" | "drop";
+
+type MotionState = TargetAndTransition | VariantLabels | boolean | undefined | any;
 
 interface RotatingTextProps {
     words: string[];
@@ -15,7 +17,7 @@ interface RotatingTextProps {
 
 const animations: Record<
     AnimationMode,
-    { initial: object; animate: object; exit: object }
+    { initial: MotionState; animate: MotionState; exit: MotionState }
 > = {
     slide: {
         initial: { y: "100%", opacity: 0 },
@@ -61,7 +63,7 @@ export function RotatingText({
         return () => clearInterval(id);
     }, [next, interval]);
 
-    const { initial, animate, exit } = animations[mode];
+    const { initial, animate, exit } = animations[mode] as { initial: MotionState; animate: MotionState; exit: MotionState };
 
     return (
         <span

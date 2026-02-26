@@ -4,23 +4,34 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { services } from '@/lib/services';
+import { RotatingText } from '@/components/ui/rotating-text';
 
 export default function CoreSolutions() {
     return (
         <section className="relative py-24 sm:py-32 bg-black overflow-hidden">
             {/* Background glow effects - Atmospheric radial glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-indigo-500/10 via-purple-500/10 to-blue-500/10 rounded-full blur-[120px] opacity-20 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#FF6A00]/10 via-[#FF2E00]/10 to-indigo-500/10 rounded-full blur-[120px] opacity-20 pointer-events-none" />
 
             <div className="relative z-10 px-6 lg:px-8 max-w-7xl mx-auto">
-                <div className="text-center mb-16">
+                <div className="text-center mb-24">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-3xl font-bold tracking-tight text-white sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/70"
+                        className="text-4xl lg:text-5xl font-[800] tracking-[-1px] text-white flex flex-wrap items-center justify-center gap-x-3 gap-y-2"
                     >
-                        Our Core Solutions
+                        <span>Scale</span>
+                        <RotatingText
+                            words={["Faster.", "Smarter.", "Predictably.", "Sustainably.", "Profitably."]}
+                            mode="drop"
+                            className="text-transparent bg-clip-text pb-2 min-w-[200px]"
+                            style={{
+                                backgroundImage: 'linear-gradient(90deg, #FF6A00 0%, #FF2E00 100%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                            }}
+                        />
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

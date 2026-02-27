@@ -70,7 +70,7 @@ export function RotatingText({
     return (
         <span
             className={cn(
-                "relative inline-flex overflow-hidden justify-items-start whitespace-nowrap",
+                "relative inline-block overflow-hidden align-baseline",
                 className
             )}
             style={{ perspective: mode === "flip" ? 600 : undefined, ...style }}
@@ -83,7 +83,7 @@ export function RotatingText({
             <AnimatePresence mode="wait">
                 <motion.span
                     key={words[index]}
-                    className="absolute inset-0 flex items-center justify-start lg:justify-start px-1"
+                    className="absolute left-0 top-0 whitespace-nowrap"
                     initial={initial}
                     animate={animate}
                     exit={exit}

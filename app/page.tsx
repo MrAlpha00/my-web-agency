@@ -56,7 +56,14 @@ export default function Home() {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                That Work <RotatingText words={["Automatically.", "24/7.", "At Scale.", "Without Hiring.", "On Autopilot."]} mode="slide" className="text-white" />
+                That Work{' '}
+                <span className="inline-block min-w-[180px]">
+                  <RotatingText
+                    words={["Automatically", "24/7", "At Scale", "On Autopilot"]}
+                    mode="slide"
+                    className="text-orange-500"
+                  />
+                </span>
               </span>
             </h1>
 

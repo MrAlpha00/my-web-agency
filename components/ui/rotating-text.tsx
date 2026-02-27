@@ -68,7 +68,10 @@ export function RotatingText({
     const { initial, animate, exit } = animations[mode] as { initial: MotionState; animate: MotionState; exit: MotionState };
 
     return (
-        <span className={cn("inline-block overflow-hidden align-bottom", className)}>
+        <span
+            className={cn("inline-block overflow-hidden align-bottom", className)}
+            style={style}
+        >
             <AnimatePresence mode="wait">
                 <motion.span
                     key={words[index]}

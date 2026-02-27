@@ -68,22 +68,11 @@ export function RotatingText({
     const { initial, animate, exit } = animations[mode] as { initial: MotionState; animate: MotionState; exit: MotionState };
 
     return (
-        <span
-            className={cn(
-                "relative inline-block overflow-hidden align-baseline",
-                className
-            )}
-            style={{ perspective: mode === "flip" ? 600 : undefined, ...style }}
-        >
-            {/* invisible placeholder for width */}
-            <span className="invisible px-1">
-                {words.reduce((a, b) => (a.length > b.length ? a : b), "")}
-            </span>
-
+        <span className={cn("inline-block overflow-hidden align-bottom", className)}>
             <AnimatePresence mode="wait">
                 <motion.span
                     key={words[index]}
-                    className="absolute left-0 top-0 whitespace-nowrap"
+                    className="inline-block whitespace-nowrap"
                     initial={initial}
                     animate={animate}
                     exit={exit}

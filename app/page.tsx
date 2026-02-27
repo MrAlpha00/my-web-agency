@@ -13,6 +13,7 @@ import TrustBadges from '@/components/TrustBadges';
 import CaseStudyPreview from '@/components/CaseStudyPreview';
 import WhoWeServe from '@/components/WhoWeServe';
 import HomepageMetrics from '@/components/HomepageMetrics';
+import { RotatingText } from '@/components/ui/rotating-text';
 
 
 export default function Home() {
@@ -55,7 +56,7 @@ export default function Home() {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                That Work 24/7.
+                That Work <RotatingText words={["Automatically.", "24/7.", "At Scale.", "Without Hiring.", "On Autopilot."]} mode="slide" className="text-white" />
               </span>
             </h1>
 

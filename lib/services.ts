@@ -345,5 +345,48 @@ export const services: Record<string, Service> = {
         ],
         seoTitle: "Growth Systems Engineering | Pureons",
         metaDescription: "Build predictable revenue engines with advanced growth infrastructure."
+    },
+    "sales-optimization": {
+        slug: "sales-optimization",
+        title: "Sales Optimization",
+        subtitle: "Maximize Every Dollar.",
+        description: "Data-driven systems that increase LTV, reduce CAC, and maximize revenue performance across all channels.",
+        iconName: "TrendingUpIcon",
+        heroGradient: "from-rose-500 via-pink-500 to-fuchsia-500",
+        problem: {
+            title: "Revenue Leakage",
+            description: "Your sales process is leaving money on the table at every stage.",
+            points: [
+                "High customer acquisition costs",
+                "Low conversion rates at key touchpoints",
+                "Inconsistent customer lifetime value",
+                "Missing upsell and cross-sell opportunities"
+            ]
+        },
+        solution: {
+            title: "Revenue Performance Engine",
+            description: "We optimize your entire sales machine to extract maximum value from every customer interaction.",
+            features: [
+                "Customer Journey Mapping & Optimization",
+                "Pricing Strategy & Discount Frameworks",
+                "Sales Pipeline Automation",
+                "Retention & Loyalty Programs"
+            ]
+        },
+        deliverables: [
+            "Sales Process Audit & Optimization",
+            "CRM Configuration & Workflows",
+            "Pricing Strategy Implementation",
+            "Customer Segmentation Analysis",
+            "Retention Campaign Setup"
+        ],
+        process: [
+            { step: 1, title: "Analyze", description: "Deep-dive into your current sales metrics and identify leakage points." },
+            { step: 2, title: "Optimize", description: "Implement pricing, process, and automation improvements." },
+            { step: 3, title: "Automate", description: "Set up nurture sequences, alerts, and handoff protocols." },
+            { step: 4, title: "Scale", description: "Expand successful patterns and continuously improve LTV:CAC ratio." }
+        ],
+        seoTitle: "Sales Optimization Services | Pureons",
+        metaDescription: "Increase LTV, reduce CAC, and maximize revenue with data-driven sales optimization."
     }
 };

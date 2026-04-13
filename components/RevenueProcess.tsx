@@ -72,7 +72,6 @@ export default function RevenueProcess() {
 
                 <div className="relative">
                     {/* Connecting Line - Desktop (Horizontal) */}
-                    {/* Connecting Line - Desktop (Horizontal) */}
                     <div className="hidden md:block absolute top-[24px] left-0 w-full h-[2px] bg-white/5 overflow-hidden">
                         {/* Static Glows near nodes */}
                         <div className="absolute inset-y-0 left-[12.5%] w-32 -translate-x-1/2 bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent blur-[1px]" />
@@ -80,12 +79,17 @@ export default function RevenueProcess() {
                         <div className="absolute inset-y-0 left-[62.5%] w-32 -translate-x-1/2 bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent blur-[1px]" />
                         <div className="absolute inset-y-0 left-[87.5%] w-32 -translate-x-1/2 bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent blur-[1px]" />
 
-                        {/* Animated Pulse */}
+                        {/* Smooth Scrolling Glow - Seamless Loop */}
                         <motion.div
-                            className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-indigo-400 to-transparent opacity-50"
-                            initial={{ x: '-100%' }}
-                            animate={{ x: '200%' }} // Move further to ensure it clears completely
-                            transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 0.5 }}
+                            className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-indigo-400 to-transparent"
+                            initial={{ x: '-100%', opacity: 0 }}
+                            animate={{ x: '200%', opacity: [0, 1, 1, 0] }}
+                            transition={{ 
+                                duration: 3, 
+                                repeat: Infinity, 
+                                ease: "linear",
+                                times: [0, 0.1, 0.9, 1]
+                            }}
                         />
                     </div>
 

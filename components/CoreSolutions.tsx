@@ -7,27 +7,27 @@ import { GlowingEffect } from '@/components/ui/glowing-effect';
 
 const coreCards = [
     {
-        title: "AI Automation Systems",
+        title: "Web Building",
+        description: "High-performance websites built to scale with headless architecture and edge-first delivery.",
+        icon: <Cpu className="h-6 w-6 text-[#FF6A00]" />,
+        href: "/services/web-infrastructure",
+    },
+    {
+        title: "AI Automation",
         description: "Intelligent workflows and AI agents that generate revenue without manual intervention.",
         icon: <Zap className="h-6 w-6 text-[#FF6A00]" />,
-        href: "/services/ai-automation",
+        href: "/services/automation-ai-agents",
     },
     {
-        title: "Conversion Architecture",
-        description: "High-performance funnels engineered to convert traffic into predictable income.",
-        icon: <BarChart3 className="h-6 w-6 text-[#FF6A00]" />,
-        href: "/services/conversion-architecture",
-    },
-    {
-        title: "Growth Infrastructure",
-        description: "Scalable backend systems built to support long-term expansion and operational efficiency.",
-        icon: <Cpu className="h-6 w-6 text-[#FF6A00]" />,
-        href: "/services/growth-infrastructure",
+        title: "Growth Systems",
+        description: "Data-driven marketing and sales infrastructure that fills your pipeline automatically.",
+        icon: <TrendingUp className="h-6 w-6 text-[#FF6A00]" />,
+        href: "/services/growth-systems",
     },
     {
         title: "Sales Optimization",
         description: "Data-driven systems that increase LTV, reduce CAC, and maximize revenue performance.",
-        icon: <TrendingUp className="h-6 w-6 text-[#FF6A00]" />,
+        icon: <BarChart3 className="h-6 w-6 text-[#FF6A00]" />,
         href: "/services/sales-optimization",
     }
 ];
